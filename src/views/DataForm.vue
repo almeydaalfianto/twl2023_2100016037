@@ -51,7 +51,7 @@
         formData.append('image', this.formData.image);
   
         axios
-          .post('http://localhost:3000/api/products', formData)
+          .post('https://backend-git-vuealmeydav2-gigajdn.vercel.app/api/products', formData)
           .then(() => {
             // Form submitted successfully
             console.log('Form submitted');

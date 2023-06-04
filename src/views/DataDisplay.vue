@@ -15,7 +15,7 @@
             <td>{{ data.name }}</td>
             <td>{{ data.phone }}</td>
             <td>
-              <img :src="`http://localhost:3000/${data.image}`" alt="Form Image" class="form-image">
+              <img :src="`https://backend-git-vuealmeydav2-gigajdn.vercel.app/${data.image}`" alt="Form Image" class="form-image">
             </td>
             <td>
               <button @click="editFormData(data)">Edit</button>
@@ -62,7 +62,7 @@ export default {
   methods: {
     fetchFormData() {
       axios
-        .get("http://localhost:3000/api/products")
+        .get("https://backend-git-vuealmeydav2-gigajdn.vercel.app/api/products")
         .then((response) => {
           this.formData = response.data;
         })
@@ -79,7 +79,7 @@ export default {
     // Method to handle form submission after editing
     submitEditedForm() {
       axios
-        .put(`http://localhost:3000/api/products/${this.editingFormData.id}`, this.editingFormData)
+        .put(`https://backend-git-vuealmeydav2-gigajdn.vercel.app/api/products/${this.editingFormData.id}`, this.editingFormData)
         .then((response) => {
           // Handle successful edit
           console.log('Form data edited:', this.editingFormData);
@@ -97,7 +97,7 @@ export default {
     deleteFormData(data) {
       // Send a delete request to the server
       axios
-        .delete(`http://localhost:3000/api/products/${data.id}`)
+        .delete(`https://backend-git-vuealmeydav2-gigajdn.vercel.app/api/products/${data.id}`)
         .then((response) => {
           // Handle successful delete
           console.log("Form data deleted:", data);
